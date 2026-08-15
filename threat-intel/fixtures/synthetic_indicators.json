@@ -1,0 +1,45 @@
+{
+  "event_info": "SOC Lab Synthetic Threat Intelligence",
+  "indicators": [
+    {
+      "indicator": "198.51.100.44",
+      "type": "ip",
+      "misp_type": "ip-dst",
+      "category": "Network activity",
+      "reputation": "suspicious",
+      "confidence": 75,
+      "tags": ["soc-lab:synthetic", "tlp:clear", "source:local-fixture"],
+      "description": "RFC 5737 TEST-NET-2 address reserved for documentation"
+    },
+    {
+      "indicator": "suspicious-login.test",
+      "type": "domain",
+      "misp_type": "domain",
+      "category": "Network activity",
+      "reputation": "suspicious",
+      "confidence": 80,
+      "tags": ["soc-lab:synthetic", "tlp:clear", "source:local-fixture"],
+      "description": "Reserved .test domain for suspicious-login playbook validation"
+    },
+    {
+      "indicator": "https://payload.test/download",
+      "type": "url",
+      "misp_type": "url",
+      "category": "Network activity",
+      "reputation": "suspicious",
+      "confidence": 70,
+      "tags": ["soc-lab:synthetic", "tlp:clear", "source:local-fixture"],
+      "description": "Reserved .test URL; no public destination is contacted"
+    },
+    {
+      "indicator": "9f7b329c8d054395f11edb248b5f0280dc2fd0d26c4811b04346912cddef3454",
+      "type": "hash",
+      "misp_type": "sha256",
+      "category": "Payload delivery",
+      "reputation": "suspicious",
+      "confidence": 90,
+      "tags": ["soc-lab:synthetic", "tlp:clear", "source:benign-marker"],
+      "description": "SHA-256 of the benign marker text SOC-LAB-BENIGN-FILE-SIMULATION"
+    }
+  ]
+}

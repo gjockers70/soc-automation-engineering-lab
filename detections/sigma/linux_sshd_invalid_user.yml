@@ -1,0 +1,23 @@
+title: SSH Login Attempt for an Invalid User
+id: 6b921b57-43fa-4d19-8b2a-8c8e8ef1c001
+status: test
+description: Detects an SSH authentication attempt that names an account absent from the Linux endpoint.
+author: SOC Automation Engineering Lab
+date: 2026-08-13
+references:
+  - https://attack.mitre.org/techniques/T1110/
+logsource:
+  product: linux
+  service: sshd
+detection:
+  selection:
+    message|contains: 'Failed password for invalid user'
+  condition: selection
+falsepositives:
+  - User typing error
+  - Stale automation or monitoring credentials
+  - Authorized authentication testing
+level: medium
+tags:
+  - attack.credential-access
+  - attack.t1110

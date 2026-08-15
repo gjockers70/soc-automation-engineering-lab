@@ -1,0 +1,33 @@
+{
+  "Client": {
+    "server_urls": ["https://10.77.30.10:8000/"],
+    "use_self_signed_ssl": true
+  },
+  "API": {
+    "bind_address": "127.0.0.1",
+    "bind_port": 8001
+  },
+  "GUI": {
+    "bind_address": "10.77.30.10",
+    "bind_port": 8889,
+    "allowed_cidr": ["10.77.30.0/24"]
+  },
+  "Frontend": {
+    "hostname": "10.77.30.10",
+    "bind_address": "10.77.30.10",
+    "bind_port": 8000
+  },
+  "Datastore": {
+    "implementation": "FileBaseDataStore",
+    "location": "/opt/soc-lab/velociraptor/datastore",
+    "filestore_directory": "/opt/soc-lab/velociraptor/filestore"
+  },
+  "Logging": {
+    "output_directory": "/opt/soc-lab/velociraptor/logs",
+    "separate_logs_per_component": true
+  },
+  "defaults": {
+    "notebook_number_of_local_workers": 1,
+    "notebook_worker_priority": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "approval_state": "pending",
+  "case_id": "~4329568",
+  "case_number": 1,
+  "created_on_revalidation": false,
+  "observable_count": 2,
+  "response_action_executed": false,
+  "severity": 2,
+  "status": "InProgress",
+  "tags": [
+    "approval:required",
+    "lifecycle:triage",
+    "soc-lab:phase6",
+    "source:wazuh-synthetic"
+  ],
+  "task_count": 4,
+  "title": "SOC-LAB-INC-0001 - Repeated failed logins from synthetic source"
+}

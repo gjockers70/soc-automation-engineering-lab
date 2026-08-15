@@ -1,0 +1,7 @@
+{
+  "detection_id": "SOC1002",
+  "EventID": 4688,
+  "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "CommandLine": "powershell.exe -EncodedCommand VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAnAFMATwBDAF8AUABIAEEAUwBFAF80AF8AQgBFAE4ASQBHAE4AJwA=",
+  "expected_wazuh_rule": 100101
+}

@@ -1,0 +1,31 @@
+services:
+  integration-api:
+    build:
+      context: ../..
+      dockerfile: docker/integration/Dockerfile
+    image: soc-integration-gateway:phase13
+    container_name: soc-integration-api
+    network_mode: host
+    env_file:
+      - /opt/soc-lab/secrets/integration.env
+    volumes:
+      - /opt/soc-lab/integration-state:/var/lib/soc-integration
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://10.77.30.10:8010/health/live', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"

@@ -1,0 +1,23 @@
+[Unit]
+Description=Velociraptor SOC Lab Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=velociraptor
+Group=velociraptor
+ExecStart=/usr/local/sbin/velociraptor --config /etc/velociraptor/server.config.yaml frontend
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/opt/soc-lab/velociraptor
+MemoryMax=1536M
+CPUQuota=100%
+LimitNOFILE=32768
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,34 @@
+{
+  "validated_at": "2026-08-14T20:07:10Z",
+  "status": "passed",
+  "scope": "repository-only corrective candidate",
+  "automated_tests": {
+    "passed": 103,
+    "failed": 0
+  },
+  "repository_validation": {
+    "json": 28,
+    "yaml": 16,
+    "xml": 2,
+    "markdown": 107,
+    "requirements": 3,
+    "workflows": 1
+  },
+  "detections": {
+    "sigma": 3,
+    "wazuh": 3,
+    "test_events": 3,
+    "pysigma_parsed": 3
+  },
+  "python_lint": "passed",
+  "bash_syntax_scripts": 51,
+  "github_actions_validation": {
+    "status": "passed",
+    "run_id": 31836568407,
+    "job": "Lint, test, and validate"
+  },
+  "live_deployment_performed": false,
+  "vm_changes_performed": false,
+  "response_action_executed": false,
+  "sensitive_data_included": false
+}

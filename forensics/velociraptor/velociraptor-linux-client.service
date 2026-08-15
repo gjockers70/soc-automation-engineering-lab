@@ -1,0 +1,20 @@
+[Unit]
+Description=Velociraptor SOC Lab Client
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/velociraptor --config /etc/velociraptor/client.config.yaml client
+Restart=on-failure
+RestartSec=15
+NoNewPrivileges=true
+ProtectHome=read-only
+ProtectSystem=full
+PrivateTmp=true
+MemoryMax=384M
+CPUQuota=50%
+ReadWritePaths=/etc/velociraptor.writeback.yaml /etc/velociraptor.writeback.yaml.bak
+
+[Install]
+WantedBy=multi-user.target

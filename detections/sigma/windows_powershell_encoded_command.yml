@@ -1,0 +1,26 @@
+title: PowerShell Launched With an Encoded Command
+id: 7e334579-8fd8-41a0-aaf4-26e933d4c002
+status: test
+description: Detects PowerShell command lines that use an encoded-command switch.
+author: SOC Automation Engineering Lab
+date: 2026-08-13
+references:
+  - https://attack.mitre.org/techniques/T1059/001/
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_image:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+  selection_flag:
+    CommandLine|re: '(?i)(?:-|/)(?:e|en|enc|enco|encod|encode|encodedcommand)\s+[A-Za-z0-9+/=]{8,}'
+  condition: selection_image and selection_flag
+falsepositives:
+  - Legitimate administrative automation that intentionally encodes a command
+  - Software deployment systems using encoded PowerShell
+level: high
+tags:
+  - attack.execution
+  - attack.t1059.001

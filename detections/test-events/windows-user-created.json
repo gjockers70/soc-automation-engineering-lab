@@ -1,0 +1,6 @@
+{
+  "detection_id": "SOC1003",
+  "EventID": 4720,
+  "TargetUserName": "soc_phase4_test",
+  "expected_wazuh_rule": 100102
+}

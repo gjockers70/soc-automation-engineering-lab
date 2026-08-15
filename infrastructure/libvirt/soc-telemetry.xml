@@ -1,0 +1,12 @@
+<network>
+  <name>soc-telemetry</name>
+  <bridge name="virbr79" stp="on" delay="0"/>
+  <domain name="soc.test" localOnly="yes"/>
+  <dns enable="yes" forwardPlainNames="no"/>
+  <ip address="10.77.30.1" netmask="255.255.255.0">
+    <dhcp>
+      <range start="10.77.30.100" end="10.77.30.199"/>
+      <host mac="52:54:00:77:30:10" name="soc-mgr-01" ip="10.77.30.10"/>
+    </dhcp>
+  </ip>
+</network>

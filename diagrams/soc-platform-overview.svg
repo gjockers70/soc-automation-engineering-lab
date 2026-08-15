@@ -1,0 +1,71 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='680' viewBox='0 0 1200 680' role='img' aria-labelledby='title desc'>
+  <title id='title'>Sanitized SOC Platform Overview dashboard layout</title>
+  <desc id='desc'>Eleven Grafana panels covering alert processing, incidents, duplicates, workflow rates, dependencies, latency, API failures, and target health.</desc>
+  <rect width='1200' height='680' fill='#101217'/>
+  <rect x='0' y='0' width='1200' height='58' fill='#181b1f'/>
+  <text x='28' y='37' fill='#f2f4f8' font-family='Arial, sans-serif' font-size='24' font-weight='700'>SOC Platform Overview</text>
+  <text x='1170' y='35' text-anchor='end' fill='#9da7b3' font-family='Arial, sans-serif' font-size='13'>sanitized provisioned layout</text>
+
+  <g font-family='Arial, sans-serif'>
+    <g>
+      <rect x='20' y='78' width='275' height='92' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='38' y='105' fill='#c7ced8' font-size='14'>Alerts received</text>
+      <text x='38' y='147' fill='#73bf69' font-size='30'>metric</text>
+    </g>
+    <g>
+      <rect x='315' y='78' width='275' height='92' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='333' y='105' fill='#c7ced8' font-size='14'>Alerts processed</text>
+      <text x='333' y='147' fill='#73bf69' font-size='30'>metric</text>
+    </g>
+    <g>
+      <rect x='610' y='78' width='275' height='92' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='628' y='105' fill='#c7ced8' font-size='14'>Incident handoffs</text>
+      <text x='628' y='147' fill='#73bf69' font-size='30'>metric</text>
+    </g>
+    <g>
+      <rect x='905' y='78' width='275' height='92' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='923' y='105' fill='#c7ced8' font-size='14'>Duplicates suppressed</text>
+      <text x='923' y='147' fill='#73bf69' font-size='30'>metric</text>
+    </g>
+
+    <g>
+      <rect x='20' y='190' width='570' height='150' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='38' y='218' fill='#c7ced8' font-size='14'>Alert and workflow rate</text>
+      <polyline points='40,308 110,290 180,296 250,245 320,269 390,234 460,258 565,220' fill='none' stroke='#5794f2' stroke-width='3'/>
+    </g>
+    <g>
+      <rect x='610' y='190' width='570' height='150' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='628' y='218' fill='#c7ced8' font-size='14'>Dependency health</text>
+      <polyline points='630,250 760,250 760,285 835,285 835,250 1160,250' fill='none' stroke='#73bf69' stroke-width='3'/>
+      <line x1='630' y1='308' x2='1160' y2='308' stroke='#343b45'/>
+    </g>
+
+    <g>
+      <rect x='20' y='360' width='373' height='125' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='38' y='388' fill='#c7ced8' font-size='14'>Average enrichment latency</text>
+      <polyline points='40,460 90,440 145,448 210,410 275,429 350,398' fill='none' stroke='#f2cc0c' stroke-width='3'/>
+    </g>
+    <g>
+      <rect x='413' y='360' width='374' height='125' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='431' y='388' fill='#c7ced8' font-size='14'>Average workflow time</text>
+      <polyline points='433,450 490,443 545,418 600,428 660,405 765,420' fill='none' stroke='#b877d9' stroke-width='3'/>
+    </g>
+    <g>
+      <rect x='807' y='360' width='373' height='125' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='825' y='388' fill='#c7ced8' font-size='14'>Retained Shuffle executions</text>
+      <polyline points='827,457 880,448 930,434 990,439 1045,415 1158,396' fill='none' stroke='#5794f2' stroke-width='3'/>
+    </g>
+
+    <g>
+      <rect x='20' y='505' width='570' height='145' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='38' y='533' fill='#c7ced8' font-size='14'>API failures</text>
+      <polyline points='40,620 130,620 180,590 215,620 390,620 430,575 465,620 565,620' fill='none' stroke='#f2495c' stroke-width='3'/>
+    </g>
+    <g>
+      <rect x='610' y='505' width='570' height='145' rx='5' fill='#1f232b' stroke='#343b45'/>
+      <text x='628' y='533' fill='#c7ced8' font-size='14'>Monitoring target health</text>
+      <polyline points='630,575 1160,575' fill='none' stroke='#73bf69' stroke-width='4'/>
+      <text x='1148' y='565' text-anchor='end' fill='#73bf69' font-size='13'>healthy</text>
+    </g>
+  </g>
+</svg>

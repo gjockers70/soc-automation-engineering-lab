@@ -1,0 +1,33 @@
+{
+  "phase": 15,
+  "validated_at": "2026-08-14",
+  "timezone": "America/Chicago",
+  "local_pipeline": "passed",
+  "github_actions_pipeline": "validated_after_push",
+  "ruff": "passed",
+  "actionlint": "passed",
+  "repository_validation": {
+    "json": 25,
+    "yaml": 16,
+    "xml": 1,
+    "markdown": 84,
+    "requirements": 3,
+    "workflows": 1
+  },
+  "detections": {
+    "sigma": 3,
+    "wazuh": 3,
+    "test_events": 3,
+    "pysigma_parsed": 3
+  },
+  "tests_passed": 86,
+  "tests_failed": 0,
+  "workflow_permissions": "contents-read",
+  "actions_pinned_to_commits": true,
+  "checkout_credentials_persisted": false,
+  "repository_secrets_used": false,
+  "deployment_steps": 0,
+  "self_hosted_runner": false,
+  "lab_connectivity": false,
+  "response_action_executed": false
+}

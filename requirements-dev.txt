@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest==8.4.1
+PyYAML==6.0.3
+ruff==0.16.3

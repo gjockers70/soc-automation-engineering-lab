@@ -1,0 +1,65 @@
+groups:
+  - name: soc-platform
+    rules:
+      - alert: SOCIntegrationGatewayDown
+        expr: up{job="soc-integration"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: SOC integration gateway is unavailable
+          runbook: TROUBLESHOOTING.md
+
+      - alert: SOCDependencyUnhealthy
+        expr: soc_dependency_healthy == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: A monitored SOC dependency is unhealthy
+          runbook: TROUBLESHOOTING.md
+
+      - alert: SOCPipelineFailures
+        expr: increase(soc_alerts_processed_total{result="failure"}[5m]) > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: The alert pipeline recorded a failure
+          runbook: TROUBLESHOOTING.md
+
+      - alert: SOCPlaybookFailureRatioHigh
+        expr: sum(soc_playbook_executions{result="failure"}) / clamp_min(sum(soc_playbook_executions), 1) > 0.2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: More than 20 percent of retained playbook executions failed
+          runbook: TROUBLESHOOTING.md
+
+      - alert: SOCEnrichmentLatencyHigh
+        expr: rate(soc_enrichment_duration_seconds_sum[5m]) / clamp_min(rate(soc_enrichment_duration_seconds_count[5m]), 0.001) > 5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: Average enrichment latency exceeded five seconds
+          runbook: TROUBLESHOOTING.md
+
+      - alert: SOCDeliveryQueueStale
+        expr: soc_delivery_oldest_pending_seconds > 120
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: The oldest durable alert delivery has waited more than two minutes
+          runbook: TROUBLESHOOTING.md
+
+      - alert: SOCDeliveryTerminalFailures
+        expr: soc_delivery_queue_items{status="failed"} > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: One or more alert deliveries require analyst replay or investigation
+          runbook: TROUBLESHOOTING.md

@@ -1,0 +1,21 @@
+{
+  "phase": 13,
+  "validated_at": "2026-08-14",
+  "timezone": "America/Chicago",
+  "status": "healthy",
+  "prometheus_version": "3.13.2",
+  "grafana_version": "13.1.3",
+  "gateway_target": "up",
+  "shuffle_collector": "up",
+  "rules_loaded": 5,
+  "dashboard_uid": "soc-platform-overview",
+  "listeners": {
+    "prometheus": "127.0.0.1:9090",
+    "grafana": "10.77.30.10:3000"
+  },
+  "grafana_secret_mode": "0640",
+  "default_route": "absent",
+  "external_telemetry": false,
+  "response_action_executed": false,
+  "repository_tests_passed": 49
+}

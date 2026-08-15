@@ -1,0 +1,8 @@
+{
+  "detection_id": "SOC1001",
+  "source": "sshd",
+  "message": "Failed password for invalid user soc_phase4_test from 198.51.100.44 port 4244 ssh2",
+  "expected_wazuh_rule": 100100,
+  "required_count": 5,
+  "timeframe_seconds": 60
+}

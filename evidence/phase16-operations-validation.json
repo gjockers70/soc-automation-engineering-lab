@@ -1,0 +1,15 @@
+{
+  "phase": 16,
+  "validated_at": "2026-08-14T16:30:19Z",
+  "target": "soc-mgr-01",
+  "validation": "read_only_health_snapshot",
+  "status": "healthy",
+  "checks": 17,
+  "failed": 0,
+  "failures": [],
+  "root_disk_used_percent": 48,
+  "memory_available_mib": 7154,
+  "default_route_present": false,
+  "response_action_executed": false,
+  "sensitive_data_included": false
+}

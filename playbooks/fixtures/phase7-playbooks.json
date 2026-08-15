@@ -1,0 +1,37 @@
+[
+  {
+    "key": "suspicious-login",
+    "name": "SOC-LAB PB1 - Suspicious Login",
+    "description": "Authenticated gateway handoff for a scored suspicious-login incident.",
+    "handoff_steps": ["Validate gateway result", "Record analyst handoff"],
+    "approval_required": false
+  },
+  {
+    "key": "suspicious-file",
+    "name": "SOC-LAB PB2 - Suspicious File",
+    "description": "Authenticated gateway handoff for a scored suspicious-file incident.",
+    "handoff_steps": ["Validate gateway result", "Record analyst handoff"],
+    "approval_required": false
+  },
+  {
+    "key": "suspicious-domain",
+    "name": "SOC-LAB PB3 - Suspicious Domain",
+    "description": "Authenticated gateway handoff for a scored suspicious-domain incident.",
+    "handoff_steps": ["Validate gateway result", "Record analyst handoff"],
+    "approval_required": false
+  },
+  {
+    "key": "account-activity",
+    "name": "SOC-LAB PB4 - Account Activity",
+    "description": "Authenticated gateway handoff that records the separately created approval requirement.",
+    "handoff_steps": ["Validate gateway result", "Record analyst handoff", "Record approval required"],
+    "approval_required": true
+  },
+  {
+    "key": "security-alert",
+    "name": "SOC-LAB PB5 - General Security Alert",
+    "description": "Authenticated fallback handoff for validated alerts without a narrower scenario mapping.",
+    "handoff_steps": ["Validate gateway result", "Record analyst handoff"],
+    "approval_required": false
+  }
+]

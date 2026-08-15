@@ -1,0 +1,17 @@
+{
+  "id": "phase8-fixture-001",
+  "timestamp": "2026-08-13T15:30:00-05:00",
+  "rule": {
+    "id": "100001",
+    "level": 7,
+    "description": "Synthetic failed login"
+  },
+  "agent": {
+    "id": "001",
+    "name": "ubuntu-web-01"
+  },
+  "data": {
+    "srcip": "198.51.100.44"
+  },
+  "synthetic": true
+}

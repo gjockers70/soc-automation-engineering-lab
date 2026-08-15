@@ -1,0 +1,31 @@
+{
+  "suspicious-login": {
+    "alert_id": "phase7-login-001",
+    "event_type": "authentication_failure",
+    "source_ip": "198.51.100.44",
+    "username": "phase7_missing_user",
+    "failed_count": 5,
+    "synthetic": true
+  },
+  "suspicious-file": {
+    "alert_id": "phase7-file-001",
+    "event_type": "file_hash",
+    "sha256": "2a00392c2e50d40b1017f544e6c7c19f0b82e19f43cd3379ba132b566b20b7a5",
+    "filename": "soc-lab-benign-simulation.txt",
+    "synthetic": true
+  },
+  "suspicious-domain": {
+    "alert_id": "phase7-domain-001",
+    "event_type": "dns_indicator",
+    "domain": "alert-source.lab.test",
+    "synthetic": true
+  },
+  "account-activity": {
+    "alert_id": "phase7-account-001",
+    "event_type": "account_change",
+    "username": "phase7_synthetic_user",
+    "proposed_action": "disable synthetic test account",
+    "approval_required": true,
+    "synthetic": true
+  }
+}

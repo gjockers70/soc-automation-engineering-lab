@@ -1,0 +1,25 @@
+title: Windows Non-Machine User Account Created
+id: cd964087-e830-446a-bfcf-94be753c3003
+status: test
+description: Detects Windows Security event 4720 for an account that is not named like a machine account.
+author: SOC Automation Engineering Lab
+date: 2026-08-13
+references:
+  - https://attack.mitre.org/techniques/T1136/001/
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4720
+  filter_machine:
+    TargetUserName|endswith: '$'
+  condition: selection and not filter_machine
+falsepositives:
+  - Approved help-desk or identity-administration activity
+  - Authorized application service-account provisioning
+  - Lab account lifecycle testing
+level: high
+tags:
+  - attack.persistence
+  - attack.t1136.001

@@ -1,0 +1,31 @@
+<group name="soc_lab,phase4,">
+  <rule id="100100" level="10" frequency="5" timeframe="60">
+    <if_matched_sid>5710</if_matched_sid>
+    <same_source_ip />
+    <description>SOC1001: Repeated SSH login attempts for invalid users from $(srcip)</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+    <group>authentication_failures,brute_force,linux,</group>
+  </rule>
+
+  <rule id="100101" level="10">
+    <if_sid>67027</if_sid>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)(?:-|/)(?:e|en|enc|enco|encod|encode|encodedcommand)\s+[A-Za-z0-9+/=]{8,}</field>
+    <description>SOC1002: PowerShell launched with an encoded command</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+    <group>windows,powershell,process_creation,</group>
+  </rule>
+
+  <rule id="100102" level="9">
+    <if_sid>60109</if_sid>
+    <field name="win.eventdata.targetUserName" type="pcre2">(?i)^(?!.*\$$).+</field>
+    <description>SOC1003: Non-machine Windows user account created: $(win.eventdata.targetUserName)</description>
+    <mitre>
+      <id>T1136.001</id>
+    </mitre>
+    <group>windows,account_creation,identity,</group>
+  </rule>
+</group>

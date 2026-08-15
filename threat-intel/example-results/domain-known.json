@@ -1,0 +1,19 @@
+{
+  "indicator": "suspicious-login.test",
+  "type": "domain",
+  "sources": [
+    {
+      "name": "local-misp",
+      "event_id": "1",
+      "attribute_uuid": "dc6ac3af-370d-4788-9d12-0d2fe563d14c"
+    }
+  ],
+  "reputation": "suspicious",
+  "confidence": 80,
+  "tags": [
+    "soc-lab:synthetic",
+    "source:local-fixture",
+    "tlp:clear"
+  ],
+  "timestamp": "2026-08-13T18:11:13.145347Z"
+}

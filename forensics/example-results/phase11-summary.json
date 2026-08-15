@@ -1,0 +1,28 @@
+{
+  "phase": 11,
+  "run_id": "phase11-20260814T002030Z",
+  "platform_version": "0.77.1",
+  "enrolled_clients": [
+    {"hostname": "ubuntu-web-01", "system": "linux"},
+    {"hostname": "WIN11-01", "system": "windows"}
+  ],
+  "collections": {
+    "linux": ["processes", "network", "users", "recent logins", "startup services", "selected file metadata and hash"],
+    "windows": ["process tree", "network", "users", "startup items", "selected recent event logs", "selected file metadata and hash"]
+  },
+  "collection_count": 12,
+  "archive_integrity": "passed",
+  "raw_results_committed": false,
+  "server_listeners": {
+    "client_frontend": "10.77.30.10:8000",
+    "gui": "10.77.30.10:8889",
+    "api": "127.0.0.1:8001"
+  },
+  "endpoint_binary_hashes": {
+    "linux_sha256": "6636020f3ce03ea4eff5d5b96d635c400e51d2636c823a8f0bd458ddc7c4d28a",
+    "windows_sha256": "c91cf8a32731c4c45c148393bc7d2af688c392194a9fffc4535e8b583260d55e"
+  },
+  "default_routes": {"server": "absent", "linux": "absent", "windows": "absent"},
+  "post_reboot_recovery": "passed",
+  "existing_soc_services_after_reboot": "healthy"
+}

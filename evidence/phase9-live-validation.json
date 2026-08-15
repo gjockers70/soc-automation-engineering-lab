@@ -1,0 +1,27 @@
+{
+  "phase": 9,
+  "validated_at": "2026-08-13",
+  "environment": "isolated soc-mgr-01 Ubuntu Server VM",
+  "automated_tests": {"passed": 26, "failed": 0},
+  "live_pipeline": {
+    "indicator": "198.51.100.44",
+    "indicator_class": "RFC 5737 TEST-NET-2 synthetic address",
+    "reputation": "suspicious",
+    "confidence": 75,
+    "score": 53,
+    "severity": "medium",
+    "first_alert": "incident_created",
+    "second_matching_alert": "incident_reused",
+    "same_incident_id": true,
+    "replayed_delivery": "duplicate_suppressed",
+    "response_action_executed": false
+  },
+  "controls": {
+    "webhook_authentication": "validated",
+    "malformed_payload": "HTTP 422",
+    "secret_file_mode": "0640",
+    "api_binding": "10.77.30.10:8010",
+    "default_route": "absent"
+  },
+  "recovery": {"management_vm_rebooted": true, "post_reboot_validation": "passed"}
+}

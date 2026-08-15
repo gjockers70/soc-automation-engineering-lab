@@ -1,0 +1,43 @@
+{
+  "phase": 10,
+  "validated_at": "2026-08-13T23:06:20Z",
+  "service": {
+    "image": "soc-integration-gateway:phase10",
+    "health": "healthy",
+    "post_reboot_recovery": "passed",
+    "thehive_case_note_sync": "passed",
+    "default_route": "absent"
+  },
+  "automated_tests": {
+    "passed": 31,
+    "failed": 0
+  },
+  "initial_live_run": {
+    "incident_id": "~81944640",
+    "score": 73,
+    "severity": "high",
+    "identity_before": "enabled",
+    "reject_response_action_executed": false,
+    "identity_after_reject": "enabled",
+    "escalate_response_action_executed": false,
+    "identity_after_escalate": "enabled",
+    "approve_execution_result": "disabled",
+    "approve_response_action_executed": true,
+    "identity_after_approve": "disabled",
+    "identical_decision_idempotent": true
+  },
+  "negative_controls": {
+    "missing_approval_token_http": 401,
+    "conflicting_final_decision_http": 409,
+    "off_allowlist_target_http": 422,
+    "os_account_present": false
+  },
+  "post_reboot_run": {
+    "identity_before": "disabled",
+    "approval_execution_result": "already_disabled",
+    "response_action_executed": false,
+    "identity_after": "disabled",
+    "all_negative_controls_passed": true
+  },
+  "scope": "Application-level synthetic identity only; no operating-system, directory-service, endpoint, IP-blocking, quarantine, or file-removal action."
+}

@@ -1,0 +1,54 @@
+{
+  "case": {
+    "title": "SOC-LAB-INC-0001 - Repeated failed logins from synthetic source",
+    "description": "## Source\nSynthetic Wazuh validation event; no real user or external host.\n\n## Evidence\nFive failed SSH logins for nonexistent user `phase6_missing_user` from TEST-NET-2 address `198.51.100.44`.\n\n## Automated enrichment\nLocal MISP match: lab-created synthetic IP; reputation suspicious-in-lab; confidence 70.\n\n## Analyst notes\nConfirm the endpoint, time window, source ownership, and successful logins before recommending containment.\n\n## Recommended remediation\nIf activity is confirmed unauthorized, propose a temporary lab-only source block and credential review. No action is executed automatically.\n\n## Approval history\nPending analyst decision.\n\n## Closure reason\nNot closed; validation and lessons learned are required before closure.",
+    "severity": 2,
+    "tlp": 2,
+    "pap": 2,
+    "tags": [
+      "soc-lab:phase6",
+      "source:wazuh-synthetic",
+      "lifecycle:triage",
+      "approval:required"
+    ]
+  },
+  "observables": [
+    {
+      "dataType": "ip",
+      "data": ["198.51.100.44"],
+      "tlp": 2,
+      "message": "TEST-NET-2 source address from a controlled synthetic event",
+      "ignoreSimilarity": false
+    },
+    {
+      "dataType": "domain",
+      "data": ["auth-source.lab.test"],
+      "tlp": 2,
+      "message": "Reserved synthetic domain used only inside the lab",
+      "ignoreSimilarity": false
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Triage alert context",
+      "description": "Confirm source, endpoint, user, time window, and detection fidelity.",
+      "status": "Waiting"
+    },
+    {
+      "title": "Investigate related authentication",
+      "description": "Review recent failed and successful authentication events on the owned endpoint.",
+      "status": "Waiting"
+    },
+    {
+      "title": "Review containment recommendation",
+      "description": "Approve, reject, or escalate the proposed lab-only action. Do not contain automatically.",
+      "status": "Waiting"
+    },
+    {
+      "title": "Validate and close",
+      "description": "Validate the outcome, record closure reason, and capture lessons learned.",
+      "status": "Waiting"
+    }
+  ],
+  "comment": "Synthetic case seeded for Phase 6 incident-lifecycle validation. No response action was executed."
+}

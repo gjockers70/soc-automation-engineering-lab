@@ -1,0 +1,136 @@
+{
+  "annotations": {"list": []},
+  "editable": false,
+  "graphTooltip": 1,
+  "panels": [
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 4, "w": 6, "x": 0, "y": 0},
+      "id": 1,
+      "options": {"colorMode": "value", "graphMode": "area", "reduceOptions": {"calcs": ["lastNotNull"], "values": false}},
+      "targets": [{"expr": "sum(soc_alerts_received_total)", "refId": "A"}],
+      "title": "Alerts received",
+      "type": "stat"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 4, "w": 6, "x": 6, "y": 0},
+      "id": 2,
+      "options": {"colorMode": "value", "graphMode": "area", "reduceOptions": {"calcs": ["lastNotNull"], "values": false}},
+      "targets": [{"expr": "sum(soc_alerts_processed_total)", "refId": "A"}],
+      "title": "Alerts processed",
+      "type": "stat"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 4, "w": 6, "x": 12, "y": 0},
+      "id": 3,
+      "options": {"colorMode": "value", "graphMode": "area", "reduceOptions": {"calcs": ["lastNotNull"], "values": false}},
+      "targets": [{"expr": "sum(soc_incidents_total)", "refId": "A"}],
+      "title": "Incident handoffs",
+      "type": "stat"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 4, "w": 6, "x": 18, "y": 0},
+      "id": 4,
+      "options": {"colorMode": "value", "graphMode": "area", "reduceOptions": {"calcs": ["lastNotNull"], "values": false}},
+      "targets": [{"expr": "sum(soc_duplicate_suppression_total)", "refId": "A"}],
+      "title": "Duplicates suppressed",
+      "type": "stat"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 4},
+      "id": 5,
+      "options": {"legend": {"displayMode": "table", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi"}},
+      "targets": [
+        {"expr": "sum by (disposition) (rate(soc_alerts_received_total[5m]))", "legendFormat": "{{disposition}}", "refId": "A"},
+        {"expr": "sum by (result) (rate(soc_alerts_processed_total[5m]))", "legendFormat": "processed {{result}}", "refId": "B"}
+      ],
+      "title": "Alert and workflow rate",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"min": 0, "max": 1}, "overrides": []},
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 4},
+      "id": 6,
+      "options": {"legend": {"displayMode": "table", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi"}},
+      "targets": [{"expr": "soc_dependency_healthy", "legendFormat": "{{dependency}}", "refId": "A"}],
+      "title": "Dependency health",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "s"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 12},
+      "id": 7,
+      "options": {"legend": {"showLegend": false}, "tooltip": {"mode": "single"}},
+      "targets": [{"expr": "rate(soc_enrichment_duration_seconds_sum[5m]) / clamp_min(rate(soc_enrichment_duration_seconds_count[5m]), 0.001)", "refId": "A"}],
+      "title": "Average enrichment latency",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "s"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 8, "y": 12},
+      "id": 8,
+      "options": {"legend": {"showLegend": false}, "tooltip": {"mode": "single"}},
+      "targets": [{"expr": "rate(soc_workflow_duration_seconds_sum[5m]) / clamp_min(rate(soc_workflow_duration_seconds_count[5m]), 0.001)", "refId": "A"}],
+      "title": "Average workflow time",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 16, "y": 12},
+      "id": 9,
+      "options": {"legend": {"displayMode": "table", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi"}},
+      "targets": [{"expr": "soc_playbook_executions", "legendFormat": "{{result}}", "refId": "A"}],
+      "title": "Retained Shuffle executions",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 7, "w": 12, "x": 0, "y": 20},
+      "id": 10,
+      "options": {"legend": {"displayMode": "table", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi"}},
+      "targets": [
+        {"expr": "sum by (service, category) (soc_api_failures_total)", "legendFormat": "{{service}} / {{category}}", "refId": "A"},
+        {"expr": "soc_delivery_queue_items{status=\"failed\"}", "legendFormat": "failed deliveries", "refId": "B"}
+      ],
+      "title": "API failures",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "soc-prometheus"},
+      "fieldConfig": {"defaults": {"min": 0, "max": 1}, "overrides": []},
+      "gridPos": {"h": 7, "w": 12, "x": 12, "y": 20},
+      "id": 11,
+      "options": {"legend": {"displayMode": "table", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi"}},
+      "targets": [
+        {"expr": "up", "legendFormat": "{{job}}", "refId": "A"},
+        {"expr": "soc_metrics_collection_up", "legendFormat": "{{collector}} collector", "refId": "B"},
+        {"expr": "soc_delivery_oldest_pending_seconds", "legendFormat": "oldest delivery seconds", "refId": "C"}
+      ],
+      "title": "Monitoring target health",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "15s",
+  "schemaVersion": 42,
+  "tags": ["soc-lab", "phase13", "observability"],
+  "templating": {"list": []},
+  "time": {"from": "now-6h", "to": "now"},
+  "timezone": "browser",
+  "title": "SOC Platform Overview",
+  "uid": "soc-platform-overview",
+  "version": 1
+}

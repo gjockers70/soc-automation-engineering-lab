@@ -1,0 +1,6 @@
+<!-- Merge into the Wazuh manager ossec.conf after local review. -->
+<integration>
+  <name>custom-soc-gateway</name>
+  <rule_id>100100,100101,100102</rule_id>
+  <alert_format>json</alert_format>
+</integration>

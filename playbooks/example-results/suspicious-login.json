@@ -1,0 +1,10 @@
+{
+  "approval_required": true,
+  "authenticated_status": 200,
+  "execution_id": "793d83de-0a61-4d18-9b8f-869ef13f73f1",
+  "execution_status": "FINISHED",
+  "playbook": "suspicious-login",
+  "response_action_executed": false,
+  "synthetic_input": true,
+  "unauthenticated_status": 401
+}

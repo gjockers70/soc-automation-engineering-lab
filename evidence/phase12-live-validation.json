@@ -1,0 +1,72 @@
+{
+  "gateway": {
+    "image": "soc-integration-gateway:phase12",
+    "status": "healthy",
+    "version": "0.4.0"
+  },
+  "generated_at": "2026-08-14T03:19:24.149129Z",
+  "integrations_after_drill": {
+    "misp": "healthy",
+    "shuffle": "healthy",
+    "thehive": "healthy",
+    "wazuh": "healthy"
+  },
+  "phase": 12,
+  "post_conditions": {
+    "default_route": "absent",
+    "endpoint_vms": "running",
+    "linux_collectors": "active",
+    "response_action_executed": false,
+    "wazuh_agents": "2 active"
+  },
+  "scenarios": [
+    {
+      "id": "P12-F01",
+      "observed_signal": "misp:unavailable; attempts=3",
+      "status": "passed"
+    },
+    {
+      "id": "P12-F02",
+      "observed_signal": "malformed_webhook=http_422",
+      "status": "passed"
+    },
+    {
+      "id": "P12-F03",
+      "observed_signal": "misp:timeout; attempts=3",
+      "status": "passed"
+    },
+    {
+      "id": "P12-F04",
+      "observed_signal": "duplicate_delivery=suppressed",
+      "status": "passed"
+    },
+    {
+      "id": "P12-F05",
+      "observed_signal": "thehive:unavailable; attempts=3",
+      "status": "passed"
+    },
+    {
+      "id": "P12-F06",
+      "observed_signal": "endpoint:disconnected; age_seconds=600",
+      "status": "passed"
+    },
+    {
+      "id": "P12-F07",
+      "observed_signal": "invalid_ioc_candidates=3; valid_iocs=0",
+      "status": "passed"
+    },
+    {
+      "id": "P12-F08",
+      "observed_signal": "misp:authentication; attempts=1",
+      "status": "passed"
+    }
+  ],
+  "scope": "isolated owned SOC lab; synthetic data only",
+  "summary": {
+    "failed": 0,
+    "passed": 8
+  },
+  "tests": {
+    "passed": 40
+  }
+}

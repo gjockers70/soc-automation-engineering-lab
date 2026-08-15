@@ -1,0 +1,45 @@
+{
+  "phase": 17,
+  "validated_at": "2026-08-14T16:58:05Z",
+  "status": "passed",
+  "portfolio_checks": {
+    "requested_top_level_documents": 10,
+    "commercial_mappings": [
+      "Tines",
+      "ThreatQ",
+      "Andesite"
+    ],
+    "provisioned_dashboard_panels": 11,
+    "prohibited_attribution_found": false
+  },
+  "repository_validation": {
+    "json": 27,
+    "yaml": 16,
+    "xml": 2,
+    "markdown": 105,
+    "requirements": 3,
+    "workflows": 1
+  },
+  "detections": {
+    "sigma": 3,
+    "wazuh": 3,
+    "test_events": 3,
+    "pysigma_parsed": 3
+  },
+  "automated_tests": {
+    "passed": 96,
+    "failed": 0
+  },
+  "live_health": {
+    "target": "soc-mgr-01",
+    "status": "healthy",
+    "checks": 17,
+    "failed": 0,
+    "root_disk_used_percent": 48,
+    "memory_available_mib": 7160,
+    "default_route_present": false
+  },
+  "github_actions_validation": "required_after_push",
+  "response_action_executed": false,
+  "sensitive_data_included": false
+}

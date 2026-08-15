@@ -1,0 +1,75 @@
+{
+  "validated_at": "2026-08-14T23:08:38Z",
+  "status": "passed",
+  "target": "soc-mgr-01",
+  "base_repository_commit": "350636a",
+  "rollback": {
+    "backup_path": "/opt/soc-lab/backups/corrective-20260814T224717Z",
+    "gateway_image": "soc-integration-gateway:pre-corrective-20260814T224717Z",
+    "protected": true
+  },
+  "deployment": {
+    "wazuh_custom_integration": "installed",
+    "shuffle_workflows": 5,
+    "gateway_worker": "healthy",
+    "prometheus_rules": 7,
+    "grafana_queue_panel": "loaded",
+    "default_route_present": false
+  },
+  "endpoint_traces": {
+    "linux_completed": {
+      "rule_id": "100100",
+      "trace_id": "ffb0b89fc901105193d36183039f000c",
+      "incident_id": "~40972376",
+      "status": "completed",
+      "attempts": 1,
+      "response_action_executed": false
+    },
+    "account_activity": {
+      "rule_id": "100102",
+      "trace_id": "3012ec8d6100449a2a87507814eaa6df",
+      "incident_id": "~81952800",
+      "approval_id": "APR-3ce08b1d-440b-4235-9909-a2fbdf1f252e",
+      "approved_target": "soc-response-test",
+      "temporary_windows_account_absent": true
+    },
+    "dependency_recovery": {
+      "trace_id": "55fb2700bfa820501f899abfc5aa6e39",
+      "retry_attempt": 1,
+      "completed_attempt": 2,
+      "status": "completed"
+    },
+    "post_reboot": {
+      "trace_id": "175c4071679b776abf75bf05cb34e89c",
+      "status": "completed_after_authenticated_replay",
+      "incident_id": "~8384",
+      "response_action_executed": false
+    }
+  },
+  "idempotency": {
+    "replayed_delivery_records": 1,
+    "duplicate_case_created": false,
+    "duplicate_shuffle_execution_created": false
+  },
+  "post_reboot_health": {
+    "checks": 17,
+    "failed": 0,
+    "root_disk_used_percent": 47,
+    "default_route_present": false
+  },
+  "discovered_and_corrected": [
+    "Wazuh extensionless entrypoint requires LF line endings",
+    "observability containers must be recreated after bind-mount source replacement",
+    "ambiguous Shuffle handoffs require an authenticated analyst reconciliation operation"
+  ],
+  "automated_tests": {
+    "passed": 104,
+    "failed": 0
+  },
+  "github_actions_validation": {
+    "status": "passed",
+    "run_id": 31849398224,
+    "job": "Lint, test, and validate"
+  },
+  "sensitive_data_included": false
+}

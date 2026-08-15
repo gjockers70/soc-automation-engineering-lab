@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+"""Wazuh entry point installed beside soc_gateway_adapter.py."""
+
+from soc_gateway_adapter import main
+
+raise SystemExit(main())

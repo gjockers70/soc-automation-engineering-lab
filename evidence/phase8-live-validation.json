@@ -1,0 +1,18 @@
+{
+  "container_health": "healthy",
+  "default_route": "absent",
+  "integration_health": {
+    "misp": "healthy",
+    "shuffle": "healthy",
+    "thehive": "healthy",
+    "wazuh": "healthy"
+  },
+  "malformed_payload_status": 422,
+  "response_action_executed": false,
+  "webhook": {
+    "authenticated_status": 202,
+    "first_disposition": "accepted",
+    "replay_disposition": "duplicate",
+    "unauthenticated_status": 401
+  }
+}

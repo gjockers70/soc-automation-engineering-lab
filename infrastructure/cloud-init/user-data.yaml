@@ -1,0 +1,35 @@
+#cloud-config
+hostname: soc-mgr-01
+fqdn: soc-mgr-01.soc.test
+manage_etc_hosts: true
+users:
+  - default
+package_update: true
+package_upgrade: false
+packages:
+  - qemu-guest-agent
+  - docker.io
+  - docker-compose-v2
+  - curl
+  - jq
+  - ca-certificates
+write_files:
+  - path: /etc/docker/daemon.json
+    owner: root:root
+    permissions: "0644"
+    content: |
+      {
+        "log-driver": "json-file",
+        "log-opts": {
+          "max-size": "10m",
+          "max-file": "3"
+        },
+        "live-restore": true
+      }
+runcmd:
+  - [systemctl, enable, --now, qemu-guest-agent]
+  - [systemctl, enable, --now, docker]
+  - [usermod, -aG, docker, ubuntu]
+  - [mkdir, -p, /opt/soc-lab]
+  - [chown, ubuntu:ubuntu, /opt/soc-lab]
+final_message: "soc-mgr-01 provisioning completed"

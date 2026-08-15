@@ -1,0 +1,10 @@
+{
+  "approval_required": true,
+  "authenticated_status": 200,
+  "execution_id": "5a84c760-c8ce-4f1e-b43e-87b430fe517b",
+  "execution_status": "FINISHED",
+  "playbook": "suspicious-file",
+  "response_action_executed": false,
+  "synthetic_input": true,
+  "unauthenticated_status": 401
+}
